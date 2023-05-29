@@ -1,0 +1,13 @@
+def solution(participant, completion):
+    answer = ''
+    #1. participant hash 구성
+    hashDict = {}
+    sumHash = 0
+    for part in participant:
+        hashDict[hash(part)] = part
+        sumHash += hash(part)
+    #2. completion list의 hash 값을 빼준다.
+    for com in completion:
+        sumHash -= hash(com)
+    
+    return hashDict[sumHash]
