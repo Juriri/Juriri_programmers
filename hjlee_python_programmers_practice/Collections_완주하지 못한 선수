@@ -1,0 +1,16 @@
+from collections import Counter
+
+def solution(participant, completion):
+    answer = ''
+    #1. participant의 counter를 구한다.
+    part_count = Counter(participant)
+    print(type(part_count))
+    #2. completion의 counter를 구한다.
+    comp_count = Counter(completion)
+    #3. 둘의 차를 구하고, key를 읽어온다. 
+    answer = part_count-comp_count
+    
+    print(answer) #Counter({'leo': 1})
+    print(answer.keys()) #dict_keys(['leo'])
+    print(list(answer.keys())[0]) #leo
+    return list(answer.keys())[0]
