@@ -1,0 +1,12 @@
+def solution(participant, completion):
+    #1. 두 리스트를 sorting 한다.
+    participant.sort()
+    completion.sort()
+    
+    #2. completion list 의 length만큼 돌면서, participant() 값과 비교한 후 return 시킨다. 
+    for i in range(len(completion)):
+        if participant[i] != completion[i]:
+                return participant[i]
+    
+    #3. if 문에서 필터되지못한 마지막 선수를 return 
+    return participant[len(participant)-1]
